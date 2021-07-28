@@ -23,3 +23,22 @@ feature_a = []
 implied_by_b = []
 feature_b = ["implied_by_b"]
 parallel = ["jpeg-decoder/rayon"]
+
+[package.metadata.raze]
+# The path at which to write output files.
+workspace_path = "//cargo"
+package_aliases_dir = "crates"
+rust_rules_workspace_name = "rules_rust"
+
+# The set of targets to generate BUILD rules for.
+targets = [
+    #"x86_64-apple-darwin",
+    #"x86_64-pc-windows-msvc",
+    "x86_64-unknown-linux-gnu",
+]
+
+# The two acceptable options are "Remote" and "Vendored" which
+# is used to indicate whether the user is using a non-vendored or
+# vendored set of dependencies.
+genmode = "Remote"
+default_gen_buildrs = true

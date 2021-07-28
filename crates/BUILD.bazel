@@ -1,0 +1,66 @@
+"""
+@generated
+cargo-raze generated Bazel file.
+
+DO NOT EDIT! Replaced on runs of cargo-raze
+"""
+
+package(default_visibility = ["//visibility:public"])
+
+licenses([
+    "notice",  # See individual crates for specific licenses
+])
+
+# Aliased targets
+alias(
+    name = "jpeg_decoder",
+    actual = "@raze__jpeg_decoder__0_1_22//:jpeg_decoder",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "num_cpus",
+    actual = "@raze__num_cpus__1_13_0//:num_cpus",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "os_str_bytes",
+    actual = "@raze__os_str_bytes__3_1_0//:os_str_bytes",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "semver_parser",
+    actual = "@raze__semver_parser__0_10_2//:semver_parser",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "sqlformat",
+    actual = "@raze__sqlformat__0_1_6//:sqlformat",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+# Export file for Stardoc support
+exports_files(
+    [
+        "crates.bzl",
+    ],
+    visibility = ["//visibility:public"],
+)
