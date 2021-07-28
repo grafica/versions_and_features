@@ -1,0 +1,25 @@
+[package]
+name = "versions_and_features"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+num_cpus = "1.0"
+jpeg-decoder = { version = "0.1", default-features = false }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+semver-parser = "0.10.2"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+os_str_bytes = "3.1.0"
+
+[target.'cfg(any(target_os = "linux", target_os="macos", target_os = "windows"))'.dependencies]
+sqlformat = "0.1.6"
+
+[features]
+default_feature_check = []
+default = ["default_feature_check"]
+feature_a = []
+implied_by_b = []
+feature_b = ["implied_by_b"]
+parallel = ["jpeg-decoder/rayon"]
