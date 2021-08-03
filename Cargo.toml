@@ -42,3 +42,4 @@ targets = [
 # vendored set of dependencies.
 genmode = "Remote"
 default_gen_buildrs = true
+generate_local_crates = true
